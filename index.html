@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Engagement Portal - Sign In</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid p-0">
+    <div class="row g-0 vh-100">
+        
+        <div class="col-lg-6 d-none d-lg-flex left-panel flex-column justify-content-center">
+            <div class="left-content-wrapper">
+                <div class="status-badge mb-4">
+                    <span class="status-dot"></span>
+                    SYSTEM STATUS: OPERATIONAL
+                </div>
+                
+                <h1 class="main-heading mb-4">Empowering Compliant<br>Medical Engagements</h1>
+                <p class="sub-text mb-5">
+                    Streamline your doctor interactions, manage contracts with<br>
+                    precision, and ensure 100% compliance across all regional<br>
+                    activities.
+                </p>
+                
+                <hr class="left-divider mb-4">
+                
+                <div class="row features-row">
+                    <div class="col-md-6 d-flex align-items-start">
+                        <i class="fa-solid fa-circle-check feature-icon mt-1 me-2"></i>
+                        <div>
+                            <div class="feature-title">AUTOMATED</div>
+                            <div class="feature-desc">Agreement Generation</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-start">
+                        <i class="fa-solid fa-circle-check feature-icon mt-1 me-2"></i>
+                        <div>
+                            <div class="feature-title">REAL-TIME</div>
+                            <div class="feature-desc">Compliance Tracking</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-12 d-flex align-items-center justify-content-center right-panel">
+            <div class="form-wrapper w-100">
+
+                <div id="loginSection">
+                
+                <div class="mb-5 text-center">
+                        <img src="assets/logo.png" alt="Company Logo" class="mb-3" style="max-height: 65px;">
+                        <h2 class="form-title mb-2">Sign In</h2>
+                        <p class="form-subtitle">Access the Medical Engagement Portal</p>
+                </div>
+
+                <form id="loginForm" novalidate>
+                    <div class="mb-4">
+                        <label for="employeeId" class="form-label custom-label">EMPLOYEE ID / EMAIL</label>
+                        <div class="input-group custom-input-group">
+                            <span class="input-group-text"><i class="fa-regular fa-envelope"></i></span>
+                            <input type="text" class="form-control" id="employeeId" placeholder="e.g. EMP12345 or email@company.com">
+                        </div>
+                        <div class="invalid-feedback">Please enter your Employee ID or Email.</div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <label for="password" class="form-label custom-label mb-0">PASSWORD</label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <div class="input-group custom-input-group">
+                            <span class="input-group-text"><i class="fa-solid fa-lock" style="font-size: 0.9em;"></i></span>
+                            <input type="password" class="form-control" id="password" placeholder="••••••••">
+                            <span class="input-group-text cursor-pointer">
+                                <i class="fa-regular fa-eye toggle-password" toggle="#password"></i>
+                            </span>
+                        </div>
+                        <div class="invalid-feedback">Please enter your password.</div>
+                    </div>
+
+                    <div class="mb-4 form-check custom-checkbox">
+                        <input type="checkbox" class="form-check-input shadow-none" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 custom-btn-primary mb-4" id="submitBtn">
+                        Sign In to Portal
+                    </button>
+
+                    <!-- <div class="d-flex align-items-center mb-4 divider-wrapper">
+                        <hr class="flex-grow-1">
+                        <span class="mx-3 divider-text">OR CONTINUE WITH</span>
+                        <hr class="flex-grow-1">
+                    </div> -->
+
+                    <!-- <button type="button" class="btn btn-outline-secondary w-100 custom-btn-sso mb-4">
+                        <i class="fa-brands fa-windows ms-1 me-2 sso-icon"></i> Corporate SSO
+                    </button> -->
+                </form>
+
+                </div>
+
+                <div id="otpSection" class="d-none w-100">
+                    <div class="icon-container mx-auto mb-4 d-flex align-items-center justify-content-center">
+                        <div class="dashed-ring d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-question text-cyan"></i>
+                        </div>
+                    </div>
+
+                    <h2 class="text-center fw-bold text-dark-navy mb-3">Two-Step Verification</h2>
+                    <p class="text-center text-muted-grey mb-4 subtext">
+                        We've sent a 6-digit verification code to<br>
+                        <span class="text-dark-navy fw-semibold">m*******@company.com</span>
+                    </p>
+
+                    <div class="d-flex justify-content-between mb-4 otp-container">
+                        <input type="text" class="form-control otp-input text-center" maxlength="1" autofocus>
+                        <input type="text" class="form-control otp-input text-center" maxlength="1">
+                        <input type="text" class="form-control otp-input text-center" maxlength="1">
+                        <input type="text" class="form-control otp-input text-center" maxlength="1">
+                        <input type="text" class="form-control otp-input text-center" maxlength="1">
+                        <input type="text" class="form-control otp-input text-center" maxlength="1">
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-4 timer-row">
+                        <span class="text-muted-grey timer-text">Resend code in <span class="text-cyan fw-bold" id="timerDisplay">01:34</span></span>
+                        <button type="button" class="btn btn-link text-muted-grey fw-semibold text-decoration-none p-0 resend-btn" id="resendBtn" disabled>Resend Code</button>
+                    </div>
+
+                    <div class="trust-device-box mb-4 d-flex align-items-start">
+                        <div class="form-check custom-checkbox mt-1 me-3">
+                            <input class="form-check-input" type="checkbox" id="trustDevice">
+                        </div>
+                        <div>
+                            <label class="form-check-label fw-bold text-dark-navy d-block" for="trustDevice">
+                                Trust this device
+                            </label>
+                            <span class="text-muted-grey subtext-small">Don't ask for a code again on this device for 30 days</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn custom-btn-primary w-100 fw-bold mb-4 verify-btn">
+                        Verify & Continue <i class="fa-solid fa-arrow-right ms-1"></i>
+                    </button>
+
+                    <div class="text-center footer-links">
+                        <a href="#" class="d-block mb-3 text-muted-grey text-decoration-none fw-semibold" id="backToLogin">
+                            Back to Login
+                        </a>
+                    </div>
+                </div>
+
+                <!-- <div class="footer-legal mt-5">
+                    <i class="fa-solid fa-shield-halved me-1 mt-1"></i>
+                    <span>Authorized users only. All activities are monitored and logged for compliance and security auditing.</span>
+                </div> -->
+
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

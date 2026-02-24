@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Overview - PHARMASYNC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.bootstrap5.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="activity.css">
+</head>
+<body>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<header class="top-header d-flex align-items-center justify-content-between pe-3 pe-md-4 bg-white border-bottom fixed-top">
+    <div class="sidebar-logo-area d-flex align-items-center justify-content-start justify-content-lg-center px-3 border-end">
+        <button class="btn btn-link text-dark p-0 me-3 d-lg-none" id="sidebarToggleBtn">
+            <i class="fa-solid fa-bars fs-4"></i>
+        </button>
+        <a href="#" class="brand-logo d-flex align-items-center text-decoration-none">
+            <img src="assets/logo.png" alt="Company Logo" class="header-logo">
+        </a>
+    </div>
+
+<div class="header-content-area d-flex align-items-center justify-content-between flex-grow-1 px-2 px-md-4">
+        <div class="search-bar position-relative flex-grow-1 mx-2 mx-md-0" style="max-width: 400px;">
+            <i class="fa-solid fa-magnifying-glass search-icon position-absolute text-muted"></i>
+            <input type="text" class="form-control bg-light border-0 ps-5" placeholder="Search activities, doctors or UIDs...">
+        </div>
+        
+        <div class="d-flex align-items-center gap-2 gap-md-4">
+            
+            
+            <div class="compliance-alert d-none d-lg-flex align-items-center rounded-pill px-3 py-1">
+                <i class="fa-solid fa-circle-exclamation me-2"></i>
+                <span class="fw-bold fs-7">COMPLIANCE: 2 TASKS PENDING</span>
+            </div>
+            
+            <div class="notification-icon position-relative cursor-pointer">
+                <i class="fa-regular fa-bell fs-5 text-secondary"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-white">
+                    3
+                </span>
+            </div>
+            
+            <div class="user-profile d-flex align-items-center cursor-pointer">
+                <div class="text-end me-2 d-none d-md-block">
+                    <div class="fw-bold text-dark fs-7 lh-1 mb-1">Rajesh Kumar</div>
+                    <div class="text-muted" style="font-size: 0.65rem; letter-spacing: 0.5px;">ZONAL BUSINESS MANAGER</div>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Rajesh+Kumar&background=333&color=fff" alt="User" class="rounded-circle" width="36" height="36">
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="app-container d-flex">
+    
+    <aside class="sidebar bg-white border-end" id="sidebarMenu">
+        <div class="sidebar-scroll py-4">
+            
+            <div class="menu-section mb-4">
+                <div class="menu-title px-4 text-muted fw-bold mb-2">MAIN MENU</div>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="menu-link active d-flex align-items-center px-4 py-2 text-decoration-none">
+                            <i class="fa-solid fa-chart-line menu-icon me-3"></i>
+                            <span class="fw-semibold">Field User Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-circle-plus menu-icon me-3"></i>
+                            <span class="fw-semibold">Create Activity</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-file-lines menu-icon me-3"></i>
+                            <span class="fw-semibold">Activity Details</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-file-signature menu-icon me-3"></i>
+                            <span class="fw-semibold">Agreement Preview</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-box-archive menu-icon me-3"></i>
+                            <span class="fw-semibold">Final Docket Generator</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu-section mt-4">
+                <div class="menu-title px-4 text-muted fw-bold mb-2">ADMINISTRATION</div>
+                <ul class="list-unstyled mb-0">
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-user-tie menu-icon me-3"></i>
+                            <span class="fw-semibold">HO Admin Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-check-double menu-icon me-3"></i>
+                            <span class="fw-semibold">Approval Review</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-users-gear menu-icon me-3"></i>
+                            <span class="fw-semibold">Users & Roles</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-link d-flex align-items-center px-4 py-2 text-decoration-none text-secondary">
+                            <i class="fa-solid fa-shield-halved menu-icon me-3"></i>
+                            <span class="fw-semibold">System Audit Logs</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </aside>
+
+    <main class="main-content flex-grow-1 bg-light">
+        <div class="content-wrapper p-3 p-md-4">
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="d-flex flex-column align-items-start justify-content-center"> 
+                    <h1 class="h3 fw-bold text-dark mb-1">Activity Overview</h1>
+                    <nav aria-label="breadcrumb" class="d-none d-md-block">
+                        <ol class="breadcrumb mb-0 fs-7">
+                            <li class="breadcrumb-item text-muted">Portal</li>
+                            <li class="breadcrumb-item fw-bold text-dark active" aria-current="page">Field User Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+                
+                <button class="btn btn-cyan text-white fw-semibold px-3 py-2">
+                    <i class="fa-solid fa-plus me-2"></i> Create New Activity
+                </button>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-5 g-3 mb-4">
+                <div class="col">
+                    <div class="card status-card h-100 border-0 shadow-sm card-neutral">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="icon-box bg-light text-secondary rounded d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </div>
+                                <span class="fw-bold text-secondary fs-7">DRAFTS</span>
+                            </div>
+                            <h2 class="display-6 fw-bold text-dark mb-1">12</h2>
+                            <p class="text-muted fs-8 mb-0">Last edited 2h ago</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card status-card h-100 border-0 shadow-sm card-blue">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="icon-box bg-blue-light text-primary rounded d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </div>
+                                <span class="fw-bold text-primary fs-7">SUBMITTED</span>
+                            </div>
+                            <h2 class="display-6 fw-bold text-dark mb-1">08</h2>
+                            <p class="text-primary fs-8 mb-0">Awaiting HO validation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card status-card h-100 border-0 shadow-sm card-green">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="icon-box bg-green-light text-success rounded d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <span class="fw-bold text-success fs-7">APPROVED</span>
+                            </div>
+                            <h2 class="display-6 fw-bold text-dark mb-1">45</h2>
+                            <p class="text-success fs-8 mb-0">Ready for execution</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card status-card h-100 border-0 shadow-sm card-red">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="icon-box bg-red-light text-danger rounded d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <span class="fw-bold text-danger fs-7">REJECTED</span>
+                            </div>
+                            <h2 class="display-6 fw-bold text-dark mb-1">03</h2>
+                            <p class="text-danger fs-8 mb-0">Review remarks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card status-card h-100 border-0 shadow-sm card-orange">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="icon-box bg-orange-light text-warning-custom rounded d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <span class="fw-bold text-warning-custom fs-7">PENDING HO</span>
+                            </div>
+                            <h2 class="display-6 fw-bold text-dark mb-1">05</h2>
+                            <p class="text-warning-custom fs-8 mb-0">Final stage review</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-header bg-white border-bottom-0 pt-4 pb-3 px-3 px-md-4 d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-2 gap-md-3 mb-3 mb-md-0">
+                        <h5 class="fw-bold text-dark mb-0 me-2">Recent Activities</h5>
+                        <div class="filter-tags d-flex flex-wrap gap-2">
+                            <span class="badge bg-light text-secondary border px-2 py-1 fs-8 fw-semibold filter-tag">
+                                STATUS: ALL <i class="fa-solid fa-xmark ms-1 cursor-pointer remove-tag"></i>
+                            </span>
+                            <span class="badge bg-light text-secondary border px-2 py-1 fs-8 fw-semibold filter-tag">
+                                REGION: WEST-1 <i class="fa-solid fa-xmark ms-1 cursor-pointer remove-tag"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center gap-2 gap-md-3">
+                        <div class="btn-group border rounded" role="group">
+                            <button type="button" class="btn btn-sm btn-white text-primary fw-semibold px-3 view-toggle active">Table View</button>
+                            <button type="button" class="btn btn-sm btn-white text-muted fw-semibold px-3 view-toggle border-start">Grid View</button>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm fw-semibold d-flex align-items-center px-3 text-dark">
+                            <i class="fa-solid fa-sliders me-2"></i> Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="card-body px-3 px-md-4 pb-4">
+                    <table id="activitiesTable" class="table table-hover align-middle custom-table nowrap w-100 mb-0">
+                        <thead class="text-secondary fs-8 fw-bold">
+                            <tr>
+                                <th class="pb-3 border-bottom text-muted">ACTIVITY ID</th>
+                                <th class="pb-3 border-bottom text-muted">ACTIVITY DETAILS</th>
+                                <th class="pb-3 border-bottom text-muted">DOCTOR / BO</th>
+                                <th class="pb-3 border-bottom text-muted">DATE & VENUE</th>
+                                <th class="pb-3 border-bottom text-muted">STATUS</th>
+                                <th class="pb-3 border-bottom text-muted">COMPLIANCE</th>
+                                <th class="pb-3 border-bottom text-muted text-end">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="border-top-0">
+                            <tr>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark fs-6">#CME-2024-089</div>
+                                    <div class="text-muted fs-8">Created 12 Oct</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark">Cardiology Webcast</div>
+                                    <div class="text-muted fs-8">Scientific Engagement</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-circle bg-blue-light text-primary fw-bold me-2">DA</div>
+                                        <div>
+                                            <div class="fw-bold text-dark">Dr. Amit Shah</div>
+                                            <div class="text-muted fs-8">BO: MUMBAI WEST</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="text-dark fw-medium">24 Oct, 2024</div>
+                                    <div class="text-muted fs-8"><i class="fa-solid fa-location-dot me-1"></i> Grand Hyatt, Mumbai</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <span class="status-pill pill-success fw-bold fs-8">
+                                            <i class="fa-solid fa-circle me-1" style="font-size: 6px; vertical-align: middle;"></i> APPROVED
+                                        </span>
+                                        <i class="fa-solid fa-lock text-muted ms-2 fs-8"></i>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex gap-1">
+                                        <div class="comp-icon comp-blue">AG</div>
+                                        <div class="comp-icon comp-green"><i class="fa-solid fa-money-bill-1-wave"></i></div>
+                                        <div class="comp-icon comp-yellow">!</div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom text-end">
+                                    <button class="btn btn-link text-secondary p-0 me-3 action-btn"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn btn-link text-secondary p-0 action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark fs-6">#CME-2024-102</div>
+                                    <div class="text-muted fs-8">Created 18 Oct</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark">Diabetes Round Table</div>
+                                    <div class="text-muted fs-8">Expert Panel</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-circle bg-orange-light text-warning-custom fw-bold me-2">SN</div>
+                                        <div>
+                                            <div class="fw-bold text-dark">Dr. S. Nair</div>
+                                            <div class="text-muted fs-8">BO: PUNE CENTRAL</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="text-dark fw-medium">30 Oct, 2024</div>
+                                    <div class="text-muted fs-8"><i class="fa-solid fa-location-dot me-1"></i> Virtual (MS Teams)</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <span class="status-pill pill-warning fw-bold fs-8">
+                                        <i class="fa-solid fa-circle me-1" style="font-size: 6px; vertical-align: middle;"></i> PENDING HO
+                                    </span>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex gap-1">
+                                        <div class="comp-icon comp-gray"><i class="fa-regular fa-file-lines"></i></div>
+                                        <div class="comp-icon comp-red"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom text-end">
+                                    <button class="btn btn-link text-secondary p-0 me-3 action-btn"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn btn-link text-secondary p-0 action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark fs-6">#CME-2024-115</div>
+                                    <div class="text-muted fs-8">Created 20 Oct</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark">Oncology Symposium</div>
+                                    <div class="text-muted fs-8">Large Event</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-circle fw-bold me-2" style="background-color: #f3e8ff; color: #a855f7;">RK</div>
+                                        <div>
+                                            <div class="fw-bold text-dark">Dr. R. Kapoor</div>
+                                            <div class="text-muted fs-8">BO: DELHI SOUTH</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="text-dark fw-medium">05 Nov, 2024</div>
+                                    <div class="text-muted fs-8"><i class="fa-solid fa-location-dot me-1"></i> Taj Palace, Delhi</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <span class="status-pill fw-bold fs-8" style="background-color: #eff6ff; color: #3b82f6; border: 1px solid #dbeafe;">
+                                        <i class="fa-solid fa-circle me-1" style="font-size: 6px; vertical-align: middle;"></i> SUBMITTED
+                                    </span>
+                                    <i class="fa-solid fa-lock text-muted ms-2 fs-8"></i>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex gap-1">
+                                        <div class="comp-icon comp-blue">AG</div>
+                                        <div class="comp-icon comp-green"><i class="fa-solid fa-money-bill-1-wave"></i></div>
+                                        <div class="comp-icon" style="background-color: #dcfce7; color: #16a34a;"><i class="fa-solid fa-shield"></i></div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom text-end">
+                                    <button class="btn btn-link text-secondary p-0 me-3 action-btn"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn btn-link text-secondary p-0 action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark fs-6">#CME-2024-098</div>
+                                    <div class="text-muted fs-8">Created 15 Oct</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="fw-bold text-dark">Neurology Workshop</div>
+                                    <div class="text-muted fs-8">Training Program</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-circle fw-bold me-2" style="background-color: #dcfce7; color: #16a34a;">MP</div>
+                                        <div>
+                                            <div class="fw-bold text-dark">Dr. M. Patel</div>
+                                            <div class="text-muted fs-8">BO: AHMEDABAD NORTH</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="text-dark fw-medium">28 Oct, 2024</div>
+                                    <div class="text-muted fs-8"><i class="fa-solid fa-location-dot me-1"></i> Lemon Tree Hotel, Ahmedabad</div>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <span class="status-pill fw-bold fs-8" style="background-color: #f8fafc; color: #475569; border: 1px solid #e2e8f0;">
+                                        <i class="fa-solid fa-circle me-1" style="font-size: 6px; vertical-align: middle;"></i> DRAFT
+                                    </span>
+                                </td>
+                                <td class="py-3 border-bottom">
+                                    <div class="d-flex gap-1">
+                                        <div class="comp-icon comp-red" style="background-color: #fee2e2; color: #ef4444;">!</div>
+                                    </div>
+                                </td>
+                                <td class="py-3 border-bottom text-end">
+                                    <button class="btn btn-link text-secondary p-0 me-3 action-btn"><i class="fa-regular fa-pen-to-square"></i></button>
+                                    <button class="btn btn-link text-secondary p-0 action-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
+
+<script src="activity.js"></script>
+
+</body>
+</html>
